@@ -1,0 +1,29 @@
+{% extends "home/base.html" %}
+{% block body_block %}
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>My Profile Page</h1>
+    {% if user.is_authenticated %}
+        <h2>Welcome {{ user.username }}!</h2>
+    {% else %}
+        <h2>Welcome to the Freelancer!</h2>
+    {% endif %}
+  </div>
+</div>
+
+
+{% block javascripts %}
+{{ block.super }}
+{% load static %}
+
+<script src="{% static 'js/index.js' %}"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    index.init()
+  })
+</script>
+
+{% endblock %}
+
+{% endblock %}

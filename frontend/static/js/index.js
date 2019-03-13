@@ -1,0 +1,5 @@
+index ={
+init: function(){
+
+}
+}
